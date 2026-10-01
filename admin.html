@@ -309,6 +309,68 @@ select.form-input{cursor:pointer}
 </style>
 </head>
 <body>
+<!-- HC51 admin password gate -->
+<style>
+#hc51pw{position:fixed;inset:0;z-index:99999;background:#2B2E4A;display:none;align-items:center;justify-content:center;padding:16px;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
+#hc51pw.open{display:flex}
+#hc51pw .pw-box{background:#fff;color:#2B2E4A;border-radius:16px;padding:32px 28px;width:100%;max-width:360px;box-shadow:0 20px 60px rgba(0,0,0,.3);text-align:center}
+#hc51pw .pw-icon{font-size:30px;margin-bottom:10px}
+#hc51pw h2{font-size:20px;font-weight:700;margin-bottom:6px}
+#hc51pw p{font-size:13px;color:#6B6E82;margin-bottom:18px}
+#hc51pw input{width:100%;padding:11px 14px;border:1.5px solid #dcdbe3;border-radius:10px;font-size:15px;outline:none;color:#2B2E4A;background:#fff}
+#hc51pw input:focus{border-color:#F0911E}
+#hc51pw .pw-err{color:#C96A4F;font-size:12px;min-height:18px;margin:8px 0 4px}
+#hc51pw .pw-actions{display:flex;gap:10px;justify-content:center;margin-top:6px}
+#hc51pw button{padding:10px 20px;border-radius:50px;font-size:13px;font-weight:600;cursor:pointer;border:none}
+#hc51pw .pw-ok{background:#2B2E4A;color:#fff}
+#hc51pw .pw-cancel{background:#f0eff4;color:#2B2E4A}
+</style>
+<div id="hc51pw" class="open" role="dialog" aria-modal="true" aria-labelledby="hc51pw-title">
+  <form class="pw-box" onsubmit="hc51PwSubmit(event)">
+    <div class="pw-icon">&#128274;</div>
+    <h2 id="hc51pw-title">Admin access</h2>
+    <p>Enter the admin password to continue.</p>
+    <input id="hc51pw-input" type="password" autocomplete="current-password" aria-label="Admin password">
+    <div class="pw-err" id="hc51pw-err" aria-live="polite"></div>
+    <div class="pw-actions">
+      <button type="button" class="pw-cancel" id="hc51pw-cancel" onclick="hc51PwClose()">Cancel</button>
+      <button type="submit" class="pw-ok">Enter</button>
+    </div>
+  </form>
+</div>
+<script>
+var HC51_PW_HASH='6ec143f895c1a619475dee0b579de6e3c3d5448a2a355db5169c45a8c7e66d06', _hc51PwNext=null;
+async function hc51Hash(s){
+  if(!(window.crypto&&crypto.subtle)) throw new Error('nocrypto');
+  var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('hc51-cal:'+s));
+  return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('');
+}
+function hc51IsUnlocked(){try{return sessionStorage.getItem('hc51_admin_ok')===HC51_PW_HASH}catch(e){return false}}
+function hc51RequireAdmin(next,opts){
+  if(hc51IsUnlocked()){next&&next();return;}
+  _hc51PwNext=next||null;
+  var o=document.getElementById('hc51pw');
+  document.getElementById('hc51pw-cancel').style.display=(opts&&opts.cancellable)?'':'none';
+  document.getElementById('hc51pw-err').textContent='';
+  o.classList.add('open');
+  setTimeout(function(){document.getElementById('hc51pw-input').focus()},50);
+}
+function hc51PwClose(){document.getElementById('hc51pw').classList.remove('open');document.getElementById('hc51pw-input').value='';}
+async function hc51PwSubmit(e){
+  e.preventDefault();
+  var inp=document.getElementById('hc51pw-input'), err=document.getElementById('hc51pw-err');
+  try{
+    var h=await hc51Hash(inp.value);
+    if(h===HC51_PW_HASH){
+      try{sessionStorage.setItem('hc51_admin_ok',h)}catch(x){}
+      hc51PwClose(); var n=_hc51PwNext; _hc51PwNext=null; if(n) n();
+    } else { err.textContent='Incorrect password. Please try again.'; inp.value=''; inp.focus(); }
+  }catch(x){ err.textContent='This browser cannot check the password here. Open the page over https.'; }
+}
+</script>
+<!-- /HC51 admin password gate -->
+<script>document.addEventListener('DOMContentLoaded',function(){hc51RequireAdmin(null,{cancellable:false});});</script>
+
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
