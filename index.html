@@ -8,54 +8,45 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ═══════════════════════════════════════════════════════
-   HC51 NEWSLETTER DESIGN SYSTEM — June 2026
-   Palette extracted from hotelco51.my.canva.site/hc51-newsletter-june
-═══════════════════════════════════════════════════════ */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  /* ── Brand colours ── */
-  --navy:#2B2E4A;       /* dark topbars, sidebar, text */
-  --navy-d:#1e2138;     /* deeper navy hover */
-  --navy-m:#3d4166;     /* mid navy */
-  --blush:#f2b3ad;      /* hero / gate bg */
-  --blush-d:#e8a09a;    /* blush hover */
-  --blush-l:#f9dedd;    /* blush pale wash */
-  --terra:#C96A4F;      /* Marketing — terracotta */
-  --terra-l:#e0907a;    /* Marketing light */
-  --terra-pl:#f5d5cc;   /* Marketing wash */
-  --terra-w:#fdf0ec;    /* Marketing pale bg */
-  --teal:#3D9B8A;       /* Sustainability — teal */
-  --teal-l:#6bbcad;     /* Sustainability light */
-  --teal-pl:#b4ddd7;    /* Sustainability wash */
-  --teal-w:#e8f6f4;     /* Sustainability pale bg */
-  --periwinkle:#5C6BAE; /* People & Culture */
-  --peri-l:#8a97c9;     /* P&C light */
-  --peri-pl:#c5cadf;    /* P&C wash */
-  --peri-w:#edf0f8;     /* P&C pale bg */
-  --amber:#F5A623;      /* Gold accent — logo "51", links */
-  --amber-d:#d48c10;    /* Amber hover */
-  --cream:#fdfaf7;      /* Page surface */
-  --smoke:#f2efeb;      /* Card surface */
-  --border:#e2ddd8;     /* Borders */
-  --grey:#9e9890;       /* Muted text */
-  --grey-l:#c4bfb8;     /* Lighter muted */
-  --grey-pl:#e8e4df;    /* Pale dividers */
-  --danger:#b33a3a;     /* Danger */
-  --danger-pl:#f5d5d5;  /* Danger wash */
-  --success:#2d7a4f;    /* Success */
+  --navy:#2B2E4A;
+  --navy-d:#1e2138;
+  --navy-m:#3d4166;
+  --blush:#f2b3ad;
+  --blush-d:#e8a09a;
+  --blush-l:#f9dedd;
+  --terra:#C96A4F;
+  --terra-l:#e0907a;
+  --terra-pl:#f5d5cc;
+  --terra-w:#fdf0ec;
+  --teal:#3D9B8A;
+  --teal-l:#6bbcad;
+  --teal-pl:#b4ddd7;
+  --teal-w:#e8f6f4;
+  --periwinkle:#5C6BAE;
+  --peri-l:#8a97c9;
+  --peri-pl:#c5cadf;
+  --peri-w:#edf0f8;
+  --amber:#F5A623;
+  --amber-d:#d48c10;
+  --cream:#fdfaf7;
+  --smoke:#f2efeb;
+  --border:#e2ddd8;
+  --grey:#9e9890;
+  --grey-l:#c4bfb8;
+  --grey-pl:#e8e4df;
+  --danger:#b33a3a;
+  --danger-pl:#f5d5d5;
+  --success:#2d7a4f;
   --white:#fff;
   --sidebar:228px;
-  /* ── Typography ── */
   --font-display:'Playfair Display',Georgia,serif;
   --font-body:'DM Sans',system-ui,sans-serif;
 }
-body{font-family:var(--font-body);
-  background:var(--cream);color:var(--navy);min-height:100vh;overflow-x:hidden}
+body{font-family:var(--font-body);background:var(--cream);color:var(--navy);min-height:100vh;overflow-x:hidden}
 
-/* ═══════════════════════════════════════════════════════
-   SHARED / UTILITY
-═══════════════════════════════════════════════════════ */
+/* SHARED / UTILITY */
 .hidden{display:none!important}
 .btn{padding:9px 18px;border-radius:50px;font-size:13px;font-weight:600;cursor:pointer;
   border:none;transition:all 0.15s;display:inline-flex;align-items:center;gap:6px;
@@ -87,9 +78,7 @@ body{font-family:var(--font-body);
 .chip.sus .chip-dot{background:var(--teal)}
 .chip.pc .chip-dot{background:var(--periwinkle)}
 
-/* ═══════════════════════════════════════════════════════
-   SCREEN: ROLE GATE
-═══════════════════════════════════════════════════════ */
+/* SCREEN: ROLE GATE */
 #screen-gate{
   position:fixed;inset:0;background:var(--blush);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
@@ -116,12 +105,8 @@ body{font-family:var(--font-body);
 .gate-sp-dot{width:7px;height:7px;border-radius:50%;background:var(--grey-l);flex-shrink:0}
 .gate-sp-dot.connected{background:var(--teal)}
 
-/* ═══════════════════════════════════════════════════════
-   SCREEN: CALENDAR
-═══════════════════════════════════════════════════════ */
+/* SCREEN: CALENDAR */
 #screen-calendar{display:none;flex-direction:column;min-height:100vh}
-
-/* Topbar */
 .cal-topbar{position:fixed;top:0;left:0;right:0;height:54px;background:var(--navy);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 24px;z-index:200;box-shadow:0 1px 0 rgba(255,255,255,0.06)}
@@ -140,8 +125,6 @@ body{font-family:var(--font-body);
 .topbar-avatar{width:30px;height:30px;border-radius:50%;background:var(--amber);
   display:flex;align-items:center;justify-content:center;
   font-size:10px;font-weight:700;color:var(--navy);cursor:pointer;letter-spacing:0.04em}
-
-/* Calendar shell */
 .cal-shell{margin-top:54px;display:flex;flex-direction:column;height:calc(100vh - 54px)}
 .month-nav{background:var(--white);border-bottom:1px solid var(--border);
   padding:0 20px;display:flex;align-items:center;gap:12px;height:52px;flex-shrink:0}
@@ -153,7 +136,7 @@ body{font-family:var(--font-body);
 .month-label{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--navy);min-width:160px}
 .year-strip{display:flex;gap:3px;margin-left:8px;overflow-x:auto}
 .year-month{padding:3px 10px;border-radius:50px;font-size:11px;font-weight:500;
-  color:var(--grey);cursor:pointer;transition:all 0.12s;white-space:nowrap}
+  color:var(--grey);cursor:pointer;transition:all 0.12px;white-space:nowrap}
 .year-month:hover{background:var(--smoke);color:var(--navy)}
 .year-month.active{background:var(--navy);color:#fff}
 .filter-bar{background:var(--white);border-bottom:1px solid var(--border);
@@ -176,8 +159,6 @@ body{font-family:var(--font-body);
 .tab-count{font-size:10px;font-weight:700;padding:1px 5px;border-radius:20px;
   background:rgba(0,0,0,0.08);margin-left:2px}
 .filter-tab.active .tab-count{background:rgba(255,255,255,0.22)}
-
-/* Grid */
 .cal-wrap{flex:1;overflow-y:auto}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);
   border-left:1px solid var(--border);background:var(--border);gap:1px}
@@ -231,12 +212,10 @@ body{font-family:var(--font-body);
 .hc-title{font-size:12px;font-weight:600;color:var(--navy);line-height:1.3}
 .hc-summary{font-size:11px;color:var(--grey);margin-top:2px;line-height:1.4}
 
-/* Drawer overlay */
+/* Drawer */
 .cal-overlay{position:fixed;inset:0;background:rgba(43,46,74,0.4);
   z-index:400;opacity:0;pointer-events:none;transition:opacity 0.2s}
 .cal-overlay.visible{opacity:1;pointer-events:all}
-
-/* Drawer */
 .drawer{position:fixed;top:54px;right:0;bottom:0;width:408px;
   background:var(--white);z-index:500;
   box-shadow:-4px 0 32px rgba(43,46,74,0.12);
@@ -302,13 +281,9 @@ body{font-family:var(--font-body);
 .asset-dl:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
 .pride-banner{background:linear-gradient(90deg,#e25c5c 0%,#C96A4F 18%,#f5d547 35%,#3D9B8A 52%,#5C6BAE 70%,#9b59b6 85%,#e25c5c 100%);height:4px;width:100%;border-radius:2px}
 
-/* ═══════════════════════════════════════════════════════
-   SCREEN: ADMIN
-═══════════════════════════════════════════════════════ */
+/* SCREEN: ADMIN */
 #screen-admin{display:none}
 .admin-layout{display:flex;min-height:100vh}
-
-/* Admin sidebar */
 .sidebar{width:var(--sidebar);background:var(--navy);min-height:100vh;
   position:fixed;top:0;left:0;display:flex;flex-direction:column;z-index:100}
 .sidebar-logo{padding:22px 18px 18px;border-bottom:1px solid rgba(255,255,255,0.08)}
@@ -337,8 +312,6 @@ body{font-family:var(--font-body);
 .sp-status-dot{width:6px;height:6px;border-radius:50%;background:var(--grey-l)}
 .sp-status-dot.ok{background:var(--teal)}
 .sp-status-dot.error{background:var(--danger)}
-
-/* Admin main */
 .admin-main{margin-left:var(--sidebar);flex:1;display:flex;flex-direction:column}
 .admin-topbar{background:var(--white);border-bottom:1.5px solid var(--border);
   padding:0 28px;height:54px;display:flex;align-items:center;
@@ -352,8 +325,6 @@ body{font-family:var(--font-body);
   display:flex;align-items:center;justify-content:center;
   font-size:10px;font-weight:800;color:var(--navy);letter-spacing:0.04em}
 .page-body{padding:24px 28px;flex:1;background:var(--cream)}
-
-/* Stats row */
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
 .stat-card{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:18px 20px}
 .stat-label{font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
@@ -361,8 +332,6 @@ body{font-family:var(--font-body);
 .stat-value{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--navy);line-height:1}
 .stat-sub{font-size:11px;color:var(--grey-l);margin-top:5px}
 .stat-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
-
-/* Toolbar */
 .toolbar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
 .search-wrap{position:relative;flex:1;min-width:200px;max-width:320px}
 .search-wrap input{width:100%;padding:8px 12px 8px 32px;border:1.5px solid var(--border);
@@ -379,8 +348,6 @@ body{font-family:var(--font-body);
 .view-tab{padding:4px 14px;border-radius:50px;font-size:12px;font-weight:600;cursor:pointer;
   color:var(--grey);transition:all 0.1s;user-select:none}
 .view-tab.active{background:var(--white);color:var(--navy);box-shadow:0 1px 4px rgba(43,46,74,0.1)}
-
-/* Table */
 .table-wrap{background:var(--white);border:1.5px solid var(--border);border-radius:14px;overflow:hidden}
 .table-header{display:grid;grid-template-columns:2fr 1fr 100px 100px 80px 100px 90px;
   padding:10px 16px;background:var(--smoke);border-bottom:1.5px solid var(--border);
@@ -405,8 +372,6 @@ body{font-family:var(--font-body);
 .status-badge{display:inline-block;padding:2px 8px;border-radius:50px;font-size:10px;font-weight:700;letter-spacing:0.04em}
 .status-published{background:var(--teal-w);color:var(--teal)}
 .status-draft{background:var(--terra-w);color:var(--terra)}
-
-/* Month grid */
 .month-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .month-card{background:var(--white);border:1.5px solid var(--border);border-radius:14px;
   overflow:hidden;cursor:pointer;transition:all 0.15s}
@@ -445,8 +410,6 @@ body{font-family:var(--font-body);
 .notice-icon{flex-shrink:0;margin-top:1px}
 .notice.info{background:var(--peri-w);border-color:var(--peri-pl)}
 .notice.success{background:var(--teal-w);border-color:var(--teal-pl)}
-
-/* Modal */
 .modal-overlay{position:fixed;inset:0;background:rgba(43,46,74,0.5);
   z-index:500;display:flex;align-items:flex-start;justify-content:center;
   padding:32px 20px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity 0.15s}
@@ -464,8 +427,6 @@ body{font-family:var(--font-body);
 .modal-body{padding:22px 26px;max-height:72vh;overflow-y:auto}
 .modal-footer{padding:14px 26px 20px;border-top:1px solid var(--border);
   display:flex;justify-content:flex-end;gap:8px;align-items:center}
-
-/* Form */
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
 .form-row.single{grid-template-columns:1fr}
 .form-row.triple{grid-template-columns:1fr 1fr 1fr}
@@ -483,8 +444,6 @@ select.form-input{cursor:pointer}
 .form-divider{border:none;border-top:1.5px solid var(--border);margin:18px 0}
 .form-section-label{font-size:10px;font-weight:700;letter-spacing:0.1em;
   text-transform:uppercase;color:var(--grey);margin-bottom:12px;display:flex;align-items:center;gap:6px}
-
-/* Goals */
 .goals-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px 10px}
 .goal-check-item{display:flex;align-items:center;gap:7px;padding:6px 9px;
   border-radius:10px;border:1.5px solid var(--border);cursor:pointer;
@@ -498,8 +457,6 @@ select.form-input{cursor:pointer}
 .goal-other-wrap.visible{display:flex;align-items:center;gap:8px}
 .goal-other-wrap input{flex:1;padding:8px 12px;border:1.5px solid var(--border);border-radius:10px;
   font-size:13px;color:var(--navy);outline:none;font-family:var(--font-body)}
-
-/* RTE */
 .rte-wrap{border:1.5px solid var(--border);border-radius:10px;overflow:hidden;background:var(--white)}
 .rte-wrap:focus-within{border-color:var(--navy)}
 .rte-toolbar{display:flex;align-items:center;gap:2px;padding:6px 8px;
@@ -523,8 +480,6 @@ select.form-input{cursor:pointer}
 .rte-editor p:last-child,.rte-rendered p:last-child{margin-bottom:0}
 .rte-hint{font-size:10.5px;color:var(--grey-l);padding:5px 10px;
   background:var(--smoke);border-top:1px solid var(--border);display:flex;align-items:center;gap:4px}
-
-/* SharePoint native picker upload panel */
 .sp-upload-panel{border:1.5px solid var(--border);border-radius:14px;overflow:hidden;background:var(--white)}
 .sp-upload-step{display:flex;gap:14px;padding:16px 18px;border-bottom:1px solid var(--border)}
 .sp-upload-step:last-child{border-bottom:none}
@@ -535,17 +490,6 @@ select.form-input{cursor:pointer}
 .sp-step-desc{font-size:12px;color:var(--grey);line-height:1.6}
 .sp-filename-row{display:flex;gap:8px;align-items:center}
 .sp-filename-row .form-input{flex:1;font-size:12px}
-
-/* Keep upload zone class for any legacy refs but hide it */
-.upload-zone{display:none}
-
-/* SharePoint upload zone */
-.upload-zone{border:2px dashed var(--border);border-radius:12px;
-  padding:20px;text-align:center;cursor:pointer;transition:all 0.12s;position:relative}
-.upload-zone:hover,.upload-zone.drag-over{border-color:var(--terra);background:var(--terra-w)}
-.upload-zone-text{font-size:12px;color:var(--grey);line-height:1.7}
-.upload-zone-text strong{color:var(--terra)}
-.upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
 .uploaded-files-list{margin-top:8px;display:flex;flex-direction:column;gap:5px}
 .uploaded-file-item{display:flex;align-items:center;gap:8px;padding:7px 11px;
   background:var(--smoke);border:1px solid var(--border);border-radius:10px;font-size:12px}
@@ -558,8 +502,6 @@ select.form-input{cursor:pointer}
 .uf-remove{width:18px;height:18px;border-radius:50%;border:none;background:transparent;
   cursor:pointer;color:var(--grey-l);display:flex;align-items:center;justify-content:center;font-size:12px}
 .uf-remove:hover{color:var(--danger);background:var(--danger-pl)}
-
-/* Detail panel (admin) */
 .detail-panel{background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:22px;margin-top:14px}
 .detail-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
 .detail-title{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--navy);margin-bottom:5px}
@@ -575,8 +517,6 @@ select.form-input{cursor:pointer}
 .empty-state{text-align:center;padding:60px 24px;color:var(--grey-l)}
 .empty-state-icon{font-size:36px;margin-bottom:12px;opacity:0.5}
 .empty-state strong{display:block;font-size:15px;color:var(--grey);margin-bottom:6px}
-
-/* SP Config panel */
 .sp-config-panel{background:var(--white);border:1.5px solid var(--border);border-radius:16px;
   padding:22px 26px;margin-bottom:24px}
 .sp-config-panel h3{font-family:var(--font-display);font-size:15px;font-weight:700;color:var(--navy);margin-bottom:5px}
@@ -591,7 +531,6 @@ select.form-input{cursor:pointer}
 </head>
 <body>
 
-<!-- ═══════════════════════════════ ROLE GATE ════════════════════════════════ -->
 <div id="screen-gate">
   <div class="gate-logo">
     <svg width="52" height="52" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
@@ -628,7 +567,6 @@ select.form-input{cursor:pointer}
   </div>
 </div>
 
-<!-- ═══════════════════════════════ CALENDAR SCREEN ═════════════════════════ -->
 <div id="screen-calendar">
   <div class="cal-topbar">
     <div class="topbar-logo">
@@ -643,7 +581,6 @@ select.form-input{cursor:pointer}
       <button class="topbar-btn" onclick="backToGate()">← Switch view</button>
     </div>
   </div>
-
   <div class="cal-shell">
     <div class="month-nav">
       <button class="nav-btn" onclick="changeMonth(-1)"><svg viewBox="0 0 14 14"><polyline points="9,2 4,7 9,12"/></svg></button>
@@ -664,7 +601,6 @@ select.form-input{cursor:pointer}
       </div>
     </div>
   </div>
-
   <div class="hover-card" id="hover-card"></div>
   <div class="cal-overlay" id="cal-overlay" onclick="closeDrawer()"></div>
   <div class="drawer" id="drawer">
@@ -677,7 +613,6 @@ select.form-input{cursor:pointer}
   </div>
 </div>
 
-<!-- ═══════════════════════════════ ADMIN SCREEN ════════════════════════════ -->
 <div id="screen-admin">
   <div class="admin-layout">
     <aside class="sidebar">
@@ -730,7 +665,6 @@ select.form-input{cursor:pointer}
           <div class="stat-card"><div class="stat-label"><span class="stat-dot" style="background:var(--periwinkle)"></span>People &amp; Culture</div><div class="stat-value" id="stat-pc">0</div><div class="stat-sub">Colleague moments</div></div>
         </div>
 
-        <!-- Initiatives view -->
         <div id="view-initiatives">
           <div class="month-pills" id="month-pills"></div>
           <div class="toolbar">
@@ -772,7 +706,6 @@ select.form-input{cursor:pointer}
           </div>
         </div>
 
-        <!-- Month grid view -->
         <div id="view-months" style="display:none">
           <div class="notice">
             <span class="notice-icon">⚠</span>
@@ -781,7 +714,6 @@ select.form-input{cursor:pointer}
           <div class="month-grid" id="month-grid"></div>
         </div>
 
-        <!-- New initiative view -->
         <div id="view-new" style="display:none">
           <div style="max-width:700px">
             <p style="font-size:13px;color:var(--grey);margin-bottom:20px">
@@ -797,14 +729,10 @@ select.form-input{cursor:pointer}
           </div>
         </div>
 
-        <!-- SharePoint config view -->
         <div id="view-sharepoint" style="display:none">
           <div class="sp-config-panel">
             <h3>☁ SharePoint File Storage</h3>
-            <p>
-              Files attached to initiatives are stored directly in the HC51 SharePoint document library. 
-              The upload folder is pre-configured — no setup required.
-            </p>
+            <p>Files attached to initiatives are stored directly in the HC51 SharePoint document library. The upload folder is pre-configured — no setup required.</p>
             <div style="background:var(--teal-w);border:1.5px solid var(--teal-pl);border-radius:12px;padding:16px 18px;margin-bottom:16px">
               <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:10px">Active destination</div>
               <div style="display:flex;flex-direction:column;gap:8px">
@@ -817,15 +745,13 @@ select.form-input{cursor:pointer}
                   <code style="font-size:12px;color:var(--navy);background:var(--white);padding:3px 8px;border-radius:6px;word-break:break-all">Shared Documents/TRIAL - Activations Calendar/Uploads</code>
                 </div>
               </div>
-              <button class="btn btn-secondary btn-sm" style="margin-top:12px" onclick="SP.openFolder()">↗ Open folder in SharePoint</button>
+              <a href="https://hotelco51.sharepoint.com/sites/EU-TM-Marketing2/Shared%20Documents/TRIAL%20-%20Activations%20Calendar/Uploads" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" style="margin-top:12px;text-decoration:none">↗ Open folder in SharePoint</a>
             </div>
           </div>
-
           <div class="sp-config-panel" style="margin-bottom:0">
-            <h3>How file uploads work in this version</h3>
+            <h3>How file uploads work</h3>
             <p>
-              This version uses a two-step approach that works regardless of where the tool is hosted, 
-              with no CORS or authentication configuration required.<br><br>
+              This tool uses a two-step approach that works regardless of where it is hosted, with no CORS or authentication configuration required.<br><br>
               <strong>Step 1 — Upload the file to SharePoint.</strong> Click "Open SharePoint uploads folder" on any initiative's file section. This opens the HC51 uploads folder directly in your browser. Drag your file in — it lands in SharePoint immediately using your existing M365 session.<br><br>
               <strong>Step 2 — Link the file back.</strong> Type the filename in the link field. The tool automatically builds the correct SharePoint URL and attaches it to the initiative. Download arrows in the calendar then link directly to that SharePoint file.<br><br>
               <strong>Supported file types:</strong> PDF, PNG, JPG, PPTX, DOCX, XLSX, ZIP.<br>
@@ -838,7 +764,6 @@ select.form-input{cursor:pointer}
   </div>
 </div>
 
-<!-- Admin modal -->
 <div class="modal-overlay" id="modal-overlay" onclick="handleOverlayClick(event)">
   <div class="modal">
     <div class="modal-head">
@@ -856,20 +781,15 @@ select.form-input{cursor:pointer}
 
 <div class="toast" id="toast"></div>
 
-<!-- ═══════════════════════════════ SCRIPT ═══════════════════════════════════ -->
 <script>
-/* ─── SHAREPOINT LAYER v3 — Native M365 File Picker ───────────────────────── */
+function esc(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+function safeUrl(url){if(!url)return'#';try{const u=new URL(url);return(u.protocol==='https:'||u.protocol==='http:')?url:'#';}catch{return'#';}}
+function sanitizeHtml(html){if(!html)return'';const doc=new DOMParser().parseFromString(html,'text/html');doc.querySelectorAll('script,iframe,object,embed,form,meta,link,style').forEach(el=>el.remove());doc.querySelectorAll('*').forEach(el=>{for(const attr of[...el.attributes]){if(/javascript:/i.test(attr.value)||/^data:/i.test(attr.value)||/^vbscript:/i.test(attr.value))el.removeAttribute(attr.name);}});return doc.body.innerHTML;}
+
 const SP = {
-  // Hardcoded HC51 SharePoint destination — no config needed
   siteUrl: 'https://hotelco51.sharepoint.com/sites/EU-TM-Marketing2',
   folderPath: 'Shared Documents/TRIAL - Activations Calendar/Uploads',
   folderUrl: 'https://hotelco51.sharepoint.com/sites/EU-TM-Marketing2/Shared%20Documents/TRIAL%20-%20Activations%20Calendar/Uploads',
-  connected: true, // Always true — uses native SP picker, no API calls needed
-
-  loadConfig() {
-    // v3: config is hardcoded above, nothing to load
-    return this;
-  },
 
   updateUI() {
     const dot1 = document.getElementById('gate-sp-dot');
@@ -880,22 +800,15 @@ const SP = {
     if(dot2){dot2.classList.add('ok');dot2.classList.remove('error');lbl2.textContent='SP connected';}
   },
 
-  // Open the SharePoint folder in a new tab so admin can upload directly
   openFolder() {
-    window.open(this.folderUrl, '_blank', 'noopener');
+    const a=document.createElement('a');
+    a.href=this.folderUrl;a.target='_blank';a.rel='noopener';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
   },
 
-  // Build the direct SP URL for a file by name (after manual upload)
   buildFileUrl(filename) {
     const encoded = encodeURIComponent(filename).replace(/'/g, '%27');
     return `${this.siteUrl}/Shared%20Documents/TRIAL%20-%20Activations%20Calendar/Uploads/${encoded}`;
-  },
-
-  fmtSize(bytes) {
-    if(!bytes) return '';
-    if (bytes < 1024) return bytes + ' B';
-    if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
-    return (bytes/1048576).toFixed(1) + ' MB';
   },
 
   extType(name) {
@@ -906,7 +819,6 @@ const SP = {
   }
 };
 
-/* ─── SHARED DATA ──────────────────────────────────────────────────────────── */
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -916,7 +828,6 @@ const GOALS_LIST = ['Customer Engagement','Guest Satisfaction','F&B Revenue','F&
   'Biodiversity','Local Economy','Creativity','Family Wellbeing','Retention',
   'Community Relations','Guest Experience'];
 
-// Core seeded events
 const BASE_EVENTS = [
   {id:'mkt-mar-4-spark',date:'2026-03-04',team:'mkt',tier:'spark',audience:'guests',title:'Colours of India — Spark: Holi Colour Welcome',summary:'Colourful bunting and dry-colour Holi welcome. Non-staining powders at arrival.',body:'<ul><li>Decorate the hotel in colourful bunting throughout the lobby and bar</li><li>Create a dry-colour Holi welcome station using natural, <strong>non-staining</strong> powders</li><li>Invite guests to take a pinch of colour on arrival with clear signage explaining Holi</li></ul>',goals:['Customer Engagement','Guest Satisfaction'],assets:[],status:'published'},
   {id:'mkt-mar-4-glow',date:'2026-03-04',team:'mkt',tier:'glow',audience:'guests',title:'Colours of India — Glow: Tastes of India Menu',summary:'Thandai cocktails and Punjabi small plates at Bar Moxy.',body:'<ul><li>Offer Indian flavours at Bar Moxy: light bites, snacks, desserts</li><li>Thandai-inspired cocktails and Punjabi-inspired small plates</li></ul>',goals:['Customer Engagement','F&B Revenue'],assets:[],status:'published'},
@@ -937,15 +848,17 @@ const BASE_EVENTS = [
 ];
 
 let LOCAL_EVENTS = [];
+function storageGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function storageSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function loadLocal(){
-  try{LOCAL_EVENTS=JSON.parse(localStorage.getItem('hc51_local_events')||'[]');}catch(e){LOCAL_EVENTS=[];}
+  try{LOCAL_EVENTS=JSON.parse(storageGet('hc51_local_events')||'[]');}catch(e){LOCAL_EVENTS=[];}
 }
 function saveLocal(){
-  localStorage.setItem('hc51_local_events',JSON.stringify(LOCAL_EVENTS));
+  storageSet('hc51_local_events',JSON.stringify(LOCAL_EVENTS));
 }
 function getAllEvents(){
   const localIds=new Set(LOCAL_EVENTS.map(e=>e.id));
-  return [...BASE_EVENTS.filter(e=>!localIds.has(e.id)),...LOCAL_EVENTS].filter(e=>e.status==='published'||true);
+  return [...BASE_EVENTS.filter(e=>!localIds.has(e.id)),...LOCAL_EVENTS];
 }
 function getPublishedEvents(){
   return getAllEvents().filter(e=>e.status==='published');
@@ -955,7 +868,6 @@ function getMonth(ds){return parseInt(ds.split('-')[1]);}
 function eventsForMonth(m){return getAllEvents().filter(e=>getMonth(e.date)===m);}
 function fmtDateDisplay(ds){const d=new Date(ds+'T12:00');return d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
 
-/* ─── NAVIGATION ───────────────────────────────────────────────────────────── */
 function enterCalendar(){
   document.getElementById('screen-gate').classList.add('out');
   setTimeout(()=>{
@@ -986,8 +898,8 @@ function backToGate(){
   setTimeout(()=>g.style.opacity='',10);
 }
 
-/* ─── CALENDAR LOGIC ───────────────────────────────────────────────────────── */
-let currentYear=2026, currentMonth=6, activeFilter='all', activeDay=null, hoverTimer=null;
+const _now=new Date();
+let currentYear=_now.getFullYear(), currentMonth=_now.getMonth()+1, activeFilter='all', activeDay=null, hoverTimer=null;
 
 function eventsForDate(ds){return getPublishedEvents().filter(e=>e.date===ds);}
 function filterEvents(evts){
@@ -997,8 +909,8 @@ function filterEvents(evts){
 function daysInMonth(y,m){return new Date(y,m,0).getDate();}
 function firstDowMon(y,m){const d=new Date(y,m-1,1).getDay();return d===0?6:d-1;}
 function teamLabel(t){return {mkt:'Marketing',sus:'Sustainability',pc:'People & Culture'}[t]||t;}
-function tierBadgeDrawer(t){return t?`<span class="tier ${t}">${t.charAt(0).toUpperCase()+t.slice(1)}</span>`:''}
-function audienceBadge(a){const i={guests:'👥 Guests',colleagues:'🏨 Colleagues',both:'🌐 Both'};return `<span class="audience-badge">${i[a]||a}</span>`;}
+function tierBadgeDrawer(t){return t?`<span class="tier ${esc(t)}">${esc(t.charAt(0).toUpperCase()+t.slice(1))}</span>`:''}
+function audienceBadge(a){const i={guests:'👥 Guests',colleagues:'🏨 Colleagues',both:'🌐 Both'};return `<span class="audience-badge">${esc(i[a]||a)}</span>`;}
 
 function countForMonth(){
   const y=currentYear,m=currentMonth,days=daysInMonth(y,m);
@@ -1039,7 +951,7 @@ function renderCalendar(){
     if(allEvts.some(e=>e.tier==='spark')) c.classList.add('has-spark');
     let h=`<div class="day-num">${d}</div>`;
     const vis=evts.slice(0,3);const over=evts.length-vis.length;
-    vis.forEach(e=>{const t=e.title.length>26?e.title.substring(0,26)+'…':e.title;h+=`<div class="pill ${e.team}"><span class="pill-dot"></span>${t}</div>`;});
+    vis.forEach(e=>{const t=e.title.length>26?e.title.substring(0,26)+'…':e.title;h+=`<div class="pill ${esc(e.team)}"><span class="pill-dot"></span>${esc(t)}</div>`;});
     if(over>0) h+=`<div class="pill-overflow">+${over} more</div>`;
     c.innerHTML=h;
     if(evts.length>0){
@@ -1094,8 +1006,8 @@ function showHover(el,ds){
   const evts=filterEvents(eventsForDate(ds));if(!evts.length)return;
   const d=new Date(ds+'T12:00:00');
   const hc=document.getElementById('hover-card');if(!hc)return;
-  let html=`<div class="hc-date">${d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'})}</div>`;
-  evts.slice(0,4).forEach(e=>{html+=`<div class="hc-item"><span class="hc-dot ${e.team}"></span><div><div class="hc-title">${e.title}</div><div class="hc-summary">${e.summary.substring(0,70)}…</div></div></div>`;});
+  let html=`<div class="hc-date">${esc(d.toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long'}))}</div>`;
+  evts.slice(0,4).forEach(e=>{html+=`<div class="hc-item"><span class="hc-dot ${esc(e.team)}"></span><div><div class="hc-title">${esc(e.title)}</div><div class="hc-summary">${esc(e.summary.substring(0,70))}…</div></div></div>`;});
   hc.innerHTML=html;hc.classList.add('visible');
   const rect=el.closest('.day-cell')?.getBoundingClientRect()||el.getBoundingClientRect();
   const hcW=260,hcH=180;
@@ -1116,17 +1028,17 @@ function openDrawer(ds){
     body+=`<div style="padding:10px 18px 0"><div class="pride-banner"></div></div>`;
   evts.forEach((e,i)=>{
     const assetHtml=buildAssetCards(e);
-    const goalsHtml=e.goals&&e.goals.length?`<div class="detail-label">Goals</div><div class="goals-row">${e.goals.map(g=>`<span class="goal-tag">${g}</span>`).join('')}</div>`:'';
+    const goalsHtml=e.goals&&e.goals.length?`<div class="detail-label">Goals</div><div class="goals-row">${e.goals.map(g=>`<span class="goal-tag">${esc(g)}</span>`).join('')}</div>`:'';
     body+=`<div class="init-section${i===0?' expanded':''}">
       <div class="init-header" onclick="this.closest('.init-section').classList.toggle('expanded')">
-        <span class="chip ${e.team}"><span class="chip-dot"></span>${teamLabel(e.team)}</span>
+        <span class="chip ${esc(e.team)}"><span class="chip-dot"></span>${esc(teamLabel(e.team))}</span>
         ${tierBadgeDrawer(e.tier)}${audienceBadge(e.audience)}
         <span class="init-chevron">▼</span>
       </div>
       <div class="init-body">
         <div class="detail-label">What to do</div>
-        <div class="detail-summary">${e.summary}</div>
-        <div class="detail-body">${e.body}</div>
+        <div class="detail-summary">${esc(e.summary)}</div>
+        <div class="detail-body">${sanitizeHtml(e.body)}</div>
         ${goalsHtml}
         ${assetHtml?`<div class="detail-label">Assets &amp; Downloads</div>${assetHtml}`:''}</div></div>`;
   });
@@ -1140,12 +1052,13 @@ function buildAssetCards(evt){
   if(!evt.assets||!evt.assets.length) return '';
   return evt.assets.map(a=>{
     const ext=SP.extType(a.name);
-    const dlHref=a.url?`href="${a.url}" target="_blank"`:`href="#" onclick="showToast('File not yet uploaded to SharePoint','error');return false"`;
-    const dlTitle=a.url?'Download from SharePoint':'Not yet on SharePoint';
+    const url=safeUrl(a.url);
+    const dlHref=url!=='#'?`href="${esc(url)}" target="_blank"`:`href="#" onclick="showToast('File not yet uploaded to SharePoint','error');return false"`;
+    const dlTitle=url!=='#'?'Download from SharePoint':'Not yet on SharePoint';
     return `<div class="asset-card">
-      <div class="asset-type-badge ${ext}">${ext.toUpperCase()}</div>
-      <div class="asset-info"><div class="asset-name">${a.name}</div><div class="asset-meta">${a.size||''}${a.url?'':' · Not uploaded'}</div></div>
-      <a class="asset-dl" ${dlHref} title="${dlTitle}">↓</a>
+      <div class="asset-type-badge ${esc(ext)}">${esc(ext.toUpperCase())}</div>
+      <div class="asset-info"><div class="asset-name">${esc(a.name)}</div><div class="asset-meta">${esc(a.size||'')}${url==='#'?' · Not uploaded':''}</div></div>
+      <a class="asset-dl" ${dlHref} title="${esc(dlTitle)}">↓</a>
     </div>`;
   }).join('');
 }
@@ -1157,7 +1070,6 @@ function closeDrawer(){
   renderCalendar();
 }
 
-/* ─── ADMIN LOGIC ──────────────────────────────────────────────────────────── */
 let editingId=null, activeMonth=null, activeTeamFilter='', tableView='list', selectedGoals=[];
 
 function showAdminView(v){
@@ -1229,31 +1141,31 @@ function renderTable(evts){
     body.innerHTML=evts.map(e=>`
     <div class="detail-panel">
       <div class="detail-head"><div>
-        <div class="detail-title">${e.title}</div>
-        <div class="detail-meta">${teamChip(e.team)} ${tierBadgeAdmin(e.tier)} <span style="font-size:11px;color:var(--grey)">${fmtDateDisplay(e.date)}</span> ${statusBadge(e.status)}</div>
+        <div class="detail-title">${esc(e.title)}</div>
+        <div class="detail-meta">${teamChip(e.team)} ${tierBadgeAdmin(e.tier)} <span style="font-size:11px;color:var(--grey)">${esc(fmtDateDisplay(e.date))}</span> ${statusBadge(e.status)}</div>
       </div></div>
-      <div class="detail-section"><div class="detail-dlabel">Summary</div><div class="detail-text">${e.summary}</div></div>
-      ${e.body?`<div class="detail-section"><div class="detail-dlabel">Full details</div><div class="rte-rendered">${e.body}</div></div>`:''}
-      ${e.goals?.length?`<div class="detail-section"><div class="detail-dlabel">Goals</div><div class="goals-display">${e.goals.map(g=>`<span class="goal-display-tag">${g}</span>`).join('')}</div></div>`:''}
+      <div class="detail-section"><div class="detail-dlabel">Summary</div><div class="detail-text">${esc(e.summary)}</div></div>
+      ${e.body?`<div class="detail-section"><div class="detail-dlabel">Full details</div><div class="rte-rendered">${sanitizeHtml(e.body)}</div></div>`:''}
+      ${e.goals?.length?`<div class="detail-section"><div class="detail-dlabel">Goals</div><div class="goals-display">${e.goals.map(g=>`<span class="goal-display-tag">${esc(g)}</span>`).join('')}</div></div>`:''}
       ${e.assets?.length?`<div class="detail-section"><div class="detail-dlabel">Files</div>${buildAssetCards(e)}</div>`:''}
       <div class="detail-actions">
-        <button class="btn btn-secondary btn-sm" onclick="editEvent('${e.id}')">✎ Edit</button>
-        ${LOCAL_EVENTS.find(l=>l.id===e.id)?`<button class="btn btn-danger btn-sm" onclick="deleteEvent('${e.id}')">🗑 Delete</button>`:''}
+        <button class="btn btn-secondary btn-sm" onclick="editEvent('${esc(e.id)}')">✎ Edit</button>
+        ${LOCAL_EVENTS.find(l=>l.id===e.id)?`<button class="btn btn-danger btn-sm" onclick="deleteEvent('${esc(e.id)}')">🗑 Delete</button>`:''}
       </div>
     </div>`).join('');
     return;
   }
   body.innerHTML=evts.map(e=>`
-  <div class="table-row" onclick="editEvent('${e.id}')">
-    <div class="cell-title">${e.title}<div class="cell-sub">${e.summary.substring(0,68)}…</div></div>
-    <div class="cell-date">${fmtDateDisplay(e.date)}<span class="month-badge">${MONTH_ABBR[getMonth(e.date)-1]}</span></div>
+  <div class="table-row" onclick="editEvent('${esc(e.id)}')">
+    <div class="cell-title">${esc(e.title)}<div class="cell-sub">${esc(e.summary.substring(0,68))}…</div></div>
+    <div class="cell-date">${esc(fmtDateDisplay(e.date))}<span class="month-badge">${MONTH_ABBR[getMonth(e.date)-1]}</span></div>
     <div>${teamChip(e.team)}</div>
     <div>${tierBadgeAdmin(e.tier)}</div>
-    <div style="font-size:11px;color:var(--grey)">${audLabel(e.audience)}</div>
+    <div style="font-size:11px;color:var(--grey)">${esc(audLabel(e.audience))}</div>
     <div>${statusBadge(e.status)}</div>
     <div style="display:flex;gap:4px" onclick="event.stopPropagation()">
-      <button class="btn btn-ghost btn-sm" onclick="editEvent('${e.id}')">Edit</button>
-      ${LOCAL_EVENTS.find(l=>l.id===e.id)?`<button class="btn btn-danger btn-sm" onclick="deleteEvent('${e.id}')">🗑</button>`:''}
+      <button class="btn btn-ghost btn-sm" onclick="editEvent('${esc(e.id)}')">Edit</button>
+      ${LOCAL_EVENTS.find(l=>l.id===e.id)?`<button class="btn btn-danger btn-sm" onclick="deleteEvent('${esc(e.id)}')">🗑</button>`:''}
     </div>
   </div>`).join('');
 }
@@ -1284,19 +1196,18 @@ function renderMonthGrid(){
 function jumpToMonth(m){activeMonth=m;document.getElementById('breadcrumb-sub').textContent=MONTHS[m-1];showAdminView('initiatives');setAdminMonth(m);}
 function quickAdd(m){openModal();setTimeout(()=>{const d=document.getElementById('f-date');if(d)d.value=`2026-${String(m).padStart(2,'0')}-01`;},80);}
 
-function teamChip(t){const labels={mkt:'Marketing',sus:'Sustainability',pc:'P&C'};return `<span class="chip ${t}"><span class="chip-dot"></span>${labels[t]||t}</span>`;}
-function tierBadgeAdmin(t){if(!t)return`<span class="tier-badge tier-none">—</span>`;const cls={spark:'tier-spark',glow:'tier-glow',flare:'tier-flare'};return`<span class="tier-badge ${cls[t]||''}">${t.charAt(0).toUpperCase()+t.slice(1)}</span>`;}
+function teamChip(t){const labels={mkt:'Marketing',sus:'Sustainability',pc:'P&C'};return `<span class="chip ${esc(t)}"><span class="chip-dot"></span>${esc(labels[t]||t)}</span>`;}
+function tierBadgeAdmin(t){if(!t)return`<span class="tier-badge tier-none">—</span>`;const cls={spark:'tier-spark',glow:'tier-glow',flare:'tier-flare'};return`<span class="tier-badge ${esc(cls[t]||'')}">${esc(t.charAt(0).toUpperCase()+t.slice(1))}</span>`;}
 function statusBadge(s){return s==='published'?`<span class="status-badge status-published">Published</span>`:`<span class="status-badge status-draft">Draft</span>`;}
 function audLabel(a){return {guests:'Guests',colleagues:'Colleagues',both:'Both'}[a]||a;}
 
-/* ─── GOALS ────────────────────────────────────────────────────────────────── */
 function buildGoalsPicker(existing){
   let h='<div class="goals-grid" id="goals-grid">';
   GOALS_LIST.forEach(g=>{
     const chk=existing.includes(g);
     h+=`<label class="goal-check-item${chk?' checked':''}" id="gcl-${CSS.escape(g)}">
-      <input type="checkbox" value="${g}"${chk?' checked':''} onchange="syncGoalItem(this)">
-      <span class="goal-check-label">${g}</span></label>`;
+      <input type="checkbox" value="${esc(g)}"${chk?' checked':''} onchange="syncGoalItem(this)">
+      <span class="goal-check-label">${esc(g)}</span></label>`;
   });
   const otherVal=existing.filter(g=>!GOALS_LIST.includes(g)).join(', ');
   h+=`<label class="goal-check-item${otherVal?' checked':''}" id="gcl-other">
@@ -1304,7 +1215,7 @@ function buildGoalsPicker(existing){
     <span class="goal-check-label">Other…</span></label></div>`;
   h+=`<div class="goal-other-wrap${otherVal?' visible':''}" id="goal-other-wrap">
     <span style="font-size:12px;color:var(--grey);white-space:nowrap">Other goal:</span>
-    <input type="text" id="goal-other-text" placeholder="Describe the goal…" value="${otherVal}"></div>`;
+    <input type="text" id="goal-other-text" placeholder="Describe the goal…" value="${esc(otherVal)}"></div>`;
   return h;
 }
 function syncGoalItem(chk){chk.closest('.goal-check-item').classList.toggle('checked',chk.checked);}
@@ -1322,27 +1233,27 @@ function collectGoals(){
   return goals;
 }
 
-/* ─── RICH TEXT EDITOR ─────────────────────────────────────────────────────── */
 function buildRTE(existingHtml,rteId){
+  const safeId=esc(rteId);
   return `<div class="rte-wrap">
   <div class="rte-toolbar">
     <span class="rte-label">Format</span><div class="rte-sep"></div>
-    <button type="button" class="rte-btn" onclick="rteCmd('bold','${rteId}')"><strong>B</strong></button>
-    <button type="button" class="rte-btn" onclick="rteCmd('italic','${rteId}')"><em>I</em></button>
+    <button type="button" class="rte-btn" onclick="rteCmd('bold','${safeId}')"><strong>B</strong></button>
+    <button type="button" class="rte-btn" onclick="rteCmd('italic','${safeId}')"><em>I</em></button>
     <div class="rte-sep"></div>
-    <button type="button" class="rte-btn" style="font-size:11px;font-weight:700;width:36px" onclick="rteHeading('${rteId}')">H3</button>
+    <button type="button" class="rte-btn" style="font-size:11px;font-weight:700;width:36px" onclick="rteHeading('${safeId}')">H3</button>
     <div class="rte-sep"></div>
-    <button type="button" class="rte-btn" onclick="rteCmd('insertUnorderedList','${rteId}')">●—</button>
-    <button type="button" class="rte-btn" onclick="rteCmd('insertOrderedList','${rteId}')">1—</button>
+    <button type="button" class="rte-btn" onclick="rteCmd('insertUnorderedList','${safeId}')">●—</button>
+    <button type="button" class="rte-btn" onclick="rteCmd('insertOrderedList','${safeId}')">1—</button>
     <div class="rte-sep"></div>
-    <button type="button" class="rte-btn" onclick="rteCmd('indent','${rteId}')">⇥</button>
-    <button type="button" class="rte-btn" onclick="rteCmd('outdent','${rteId}')">⇤</button>
+    <button type="button" class="rte-btn" onclick="rteCmd('indent','${safeId}')">⇥</button>
+    <button type="button" class="rte-btn" onclick="rteCmd('outdent','${safeId}')">⇤</button>
     <div class="rte-sep"></div>
-    <button type="button" class="rte-btn" style="font-size:10px;width:36px;color:var(--grey)" onclick="rteClear('${rteId}')">Clear</button>
+    <button type="button" class="rte-btn" style="font-size:10px;width:36px;color:var(--grey)" onclick="rteClear('${safeId}')">Clear</button>
   </div>
-  <div class="rte-editor" id="${rteId}" contenteditable="true"
+  <div class="rte-editor" id="${safeId}" contenteditable="true"
     data-placeholder="Describe the activation step by step. What should the hotel team prepare, buy, and do? This appears in the detail drawer on the live calendar."
-    onkeydown="rteKeyDown(event,'${rteId}')">${existingHtml||''}</div>
+    onkeydown="rteKeyDown(event,'${safeId}')">${sanitizeHtml(existingHtml)}</div>
   <div class="rte-hint">✎ Tip: Use Bullet list for activity steps. Use H3 for section headings. Bold for key actions.</div>
 </div>`;
 }
@@ -1367,21 +1278,20 @@ function getRTEContent(rteId){
   return html;
 }
 
-/* ─── FILE UPLOAD UI v3 — Native SharePoint picker ────────────────────────── */
-// Staged files: { name, url, size, type, status }
 let stagedFiles = [];
 
 function buildUploadZone(evtId) {
+  const safeEvtId=esc(evtId);
   return `
-  <div class="sp-upload-panel" id="upload-panel-${evtId}">
+  <div class="sp-upload-panel" id="upload-panel-${safeEvtId}">
     <div class="sp-upload-step">
       <div class="sp-step-num">1</div>
       <div class="sp-step-body">
         <div class="sp-step-title">Upload your file to SharePoint</div>
         <div class="sp-step-desc">Opens the HC51 activations folder directly. Drag your file in, then come back here.</div>
-        <button class="btn btn-primary btn-sm" style="margin-top:8px" onclick="openSPFolder('${evtId}')">
+        <a href="${SP.folderUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="margin-top:8px;text-decoration:none">
           ↗ Open SharePoint uploads folder
-        </button>
+        </a>
       </div>
     </div>
     <div class="sp-upload-step">
@@ -1390,22 +1300,17 @@ function buildUploadZone(evtId) {
         <div class="sp-step-title">Paste the filename here to link it</div>
         <div class="sp-step-desc">After uploading, type the exact filename below. The tool will build the SharePoint link automatically.</div>
         <div class="sp-filename-row" style="margin-top:8px">
-          <input type="text" class="form-input" id="sp-filename-${evtId}" placeholder="e.g. Easter Campaign Brief.pdf" style="font-size:12px">
-          <button class="btn btn-secondary btn-sm" onclick="linkSPFile('${evtId}')">Link file</button>
+          <input type="text" class="form-input" id="sp-filename-${safeEvtId}" placeholder="e.g. Easter Campaign Brief.pdf" style="font-size:12px">
+          <button class="btn btn-secondary btn-sm" onclick="linkSPFile('${safeEvtId}')">Link file</button>
         </div>
         <div class="form-hint" style="margin-top:4px">Or paste a full SharePoint URL if you already have one.</div>
       </div>
     </div>
   </div>
-  <div class="uploaded-files-list" id="file-list-${evtId}"></div>`;
+  <div class="uploaded-files-list" id="file-list-${safeEvtId}"></div>`;
 }
 
-function openSPFolder(evtId) {
-  SP.openFolder();
-  showToast('SharePoint folder opened in new tab');
-  // Prompt the filename input after a moment
-  setTimeout(()=>document.getElementById('sp-filename-'+evtId)?.focus(), 800);
-}
+
 
 function linkSPFile(evtId) {
   const input = document.getElementById('sp-filename-'+evtId);
@@ -1414,18 +1319,19 @@ function linkSPFile(evtId) {
   if(!val) { showToast('Please enter a filename or URL', 'error'); return; }
 
   let url, name;
-  // Detect if they pasted a full URL
-  if(val.startsWith('http')) {
-    url = val;
-    // Extract filename from URL
-    name = decodeURIComponent(val.split('/').pop().split('?')[0]);
+  if(val.startsWith('https://')||val.startsWith('http://')) {
+    try {
+      const u = new URL(val);
+      url = u.href;
+      name = decodeURIComponent(u.pathname.split('/').pop()) || val;
+    } catch {
+      showToast('Invalid URL — please check and try again', 'error'); return;
+    }
   } else {
-    // Build URL from filename
     name = val;
     url = SP.buildFileUrl(val);
   }
 
-  // Dedupe
   if(stagedFiles.find(f=>f.name===name)) {
     showToast('File already linked', 'error'); return;
   }
@@ -1441,11 +1347,11 @@ function renderFileList(evtId) {
   if(!list) return;
   list.innerHTML = stagedFiles.map((sf,i)=>`
   <div class="uploaded-file-item">
-    <div class="asset-type-badge ${sf.type}" style="width:24px;height:24px;font-size:8px">${sf.type.toUpperCase()}</div>
-    <span class="uf-name">${sf.name}</span>
+    <div class="asset-type-badge ${esc(sf.type)}" style="width:24px;height:24px;font-size:8px">${esc(sf.type.toUpperCase())}</div>
+    <span class="uf-name">${esc(sf.name)}</span>
     <span class="uf-status done">✓ Linked to SharePoint</span>
-    <a href="${sf.url}" target="_blank" class="btn btn-ghost btn-sm" style="padding:3px 8px;font-size:10px;text-decoration:none">Preview ↗</a>
-    <button class="uf-remove" onclick="removeStagedFile(${i},'${evtId}')" title="Remove">✕</button>
+    <a href="${esc(safeUrl(sf.url))}" target="_blank" class="btn btn-ghost btn-sm" style="padding:3px 8px;font-size:10px;text-decoration:none">Preview ↗</a>
+    <button class="uf-remove" onclick="removeStagedFile(${i},'${esc(evtId)}')" title="Remove">✕</button>
   </div>`).join('');
 }
 
@@ -1455,7 +1361,6 @@ function removeStagedFile(i, evtId) {
 }
 
 async function uploadStagedFiles(initiativeId, evtIdContext) {
-  // v3: files are already in SharePoint — just return the linked metadata
   return stagedFiles.map(sf => ({
     name: sf.name,
     size: sf.size || '',
@@ -1464,7 +1369,6 @@ async function uploadStagedFiles(initiativeId, evtIdContext) {
   }));
 }
 
-/* ─── FORM ─────────────────────────────────────────────────────────────────── */
 function buildForm(evt, context) {
   stagedFiles = evt?.assets ? evt.assets.filter(a=>a.url).map(a=>({file:{name:a.name},status:'done',url:a.url})) : [];
   selectedGoals = evt?.goals || [];
@@ -1475,7 +1379,7 @@ function buildForm(evt, context) {
   <div class="form-row single">
     <div class="form-group">
       <label class="form-label">Title <span class="req">*</span></label>
-      <input class="form-input" id="f-title" placeholder="e.g. Earth Day — Spark: Greener Stay Moment" value="${evt?.title||''}" maxlength="80">
+      <input class="form-input" id="f-title" placeholder="e.g. Earth Day — Spark: Greener Stay Moment" value="${esc(evt?.title||'')}" maxlength="80">
       <div class="char-count"><span id="title-count">${(evt?.title||'').length}</span>/80</div>
     </div>
   </div>
@@ -1491,7 +1395,7 @@ function buildForm(evt, context) {
     </div>
     <div class="form-group">
       <label class="form-label">Date <span class="req">*</span></label>
-      <input class="form-input" id="f-date" type="date" value="${evt?.date||''}">
+      <input class="form-input" id="f-date" type="date" value="${esc(evt?.date||'')}">
     </div>
     <div class="form-group">
       <label class="form-label">Audience</label>
@@ -1526,7 +1430,7 @@ function buildForm(evt, context) {
   <div class="form-row single">
     <div class="form-group">
       <label class="form-label">Short summary <span class="req">*</span></label>
-      <input class="form-input" id="f-summary" placeholder="One sentence shown on hover and top of the drawer (max 140 chars)" value="${evt?.summary||''}" maxlength="140">
+      <input class="form-input" id="f-summary" placeholder="One sentence shown on hover and top of the drawer (max 140 chars)" value="${esc(evt?.summary||'')}" maxlength="140">
       <div class="char-count"><span id="summary-count">${(evt?.summary||'').length}</span>/140</div>
     </div>
   </div>
@@ -1551,7 +1455,7 @@ function buildForm(evt, context) {
       <label class="form-label">Downloadable files</label>
       ${buildUploadZone(evtId)}
       <div class="form-hint" style="margin-top:6px">
-        ${SP.connected?`Upload to SharePoint first using the button above, then paste the filename to link it. Files land in <strong>TRIAL - Activations Calendar/Uploads</strong>.`:'SharePoint is pre-configured — use the two-step upload process above.'}
+        Upload to SharePoint first using the button above, then paste the filename to link it. Files land in <strong>TRIAL - Activations Calendar/Uploads</strong>.
       </div>
     </div>
   </div>`;
@@ -1564,7 +1468,6 @@ function attachFormListeners(){
   if(su) su.addEventListener('input',function(){document.getElementById('summary-count').textContent=this.value.length;});
 }
 
-/* ─── MODAL ────────────────────────────────────────────────────────────────── */
 function openModal(prefillMonth){
   editingId=null;stagedFiles=[];
   document.getElementById('modal-title').textContent='Add new initiative';
@@ -1584,7 +1487,6 @@ function editEvent(id){
 function closeModal(){document.getElementById('modal-overlay').classList.remove('open');editingId=null;stagedFiles=[];}
 function handleOverlayClick(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
 
-/* ─── SAVE ─────────────────────────────────────────────────────────────────── */
 async function saveForm(statusOverride, context){
   const rteId='rte-'+(context||'modal');
   const evtId = context==='modal' ? (editingId||genId()) : (editingId||genId());
@@ -1604,14 +1506,12 @@ async function saveForm(statusOverride, context){
   if(!date){showToast('Please set a date','error');return;}
   if(!summary){showToast('Please add a summary','error');return;}
 
-  // Collect linked SP files
   showToast('Saving…');
   let assets = [];
   try {
     assets = await uploadStagedFiles(evtId, evtId);
     if(assets.some(a=>a.url))
       showToast(`${assets.filter(a=>a.url).length} file(s) linked from SharePoint`,'success');
-    // Merge with existing assets if editing
     if(editingId){
       const existing=getAllEvents().find(e=>e.id===editingId);
       const existingAssets=(existing?.assets||[]).filter(a=>!assets.find(na=>na.name===a.name));
@@ -1648,12 +1548,6 @@ function deleteEvent(id){
   showToast('Initiative deleted');
 }
 
-/* ─── SHAREPOINT CONFIG — v3: hardcoded, no user config needed ────────────── */
-function saveSPConfig(){ showToast('SharePoint is pre-configured in this version'); }
-function clearSPConfig(){ showToast('SharePoint is pre-configured in this version'); }
-async function testSPConnection(){ showToast('Opening SharePoint folder to verify connection…'); SP.openFolder(); }
-
-/* ─── TOAST ────────────────────────────────────────────────────────────────── */
 let _tt;
 function showToast(msg,type=''){
   const t=document.getElementById('toast');
@@ -1661,9 +1555,9 @@ function showToast(msg,type=''){
   clearTimeout(_tt);_tt=setTimeout(()=>{t.className='toast';},3000);
 }
 
-/* ─── INIT ─────────────────────────────────────────────────────────────────── */
 loadLocal();
-SP.loadConfig().updateUI();
+SP.updateUI();
+
 </script>
 </body>
 </html>
